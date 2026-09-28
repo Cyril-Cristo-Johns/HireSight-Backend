@@ -7,7 +7,7 @@ let user_route= express.Router();
 user_route.post("/register", userRegister);
 user_route.post("/login", userLogin);
 user_route.put("/password", protect, updatePassword );
-user_route.delete("/delete", protect, deleteAccount);
+user_route.delete("/account", protect, deleteAccount);
 
 
 export default user_route;

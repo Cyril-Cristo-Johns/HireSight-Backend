@@ -1,6 +1,7 @@
 import User from "../Models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { Application } from "../Models/Application.js";
 
 
 const generateToken= (id)=>jwt.sign(
@@ -141,6 +142,7 @@ export const deleteAccount = async (req, res) => {
 
     res.status(200).json({ message: 'Account and all data deleted' });
   } catch (error) {
+    console.log(error.message)
     res.status(500).json({ error: 'Failed to delete account' });
   }
 };
